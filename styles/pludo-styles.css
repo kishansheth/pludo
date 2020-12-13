@@ -1,0 +1,91 @@
+:root {
+    /* Colors */
+    --primary: #FF0D56;
+    --primary-dim: #cc0a44;
+    --primary-faded: rgba(255, 13, 86, .5);
+    --gray-dark: #141313;
+    --gray-light: #262424;
+    --radius-circle: 5rem;
+}
+
+html, body {
+    font-size: 18px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    background-color: var(--gray-dark);
+}
+
+.test {
+    font-size: 5rem;
+    color: var(--primary);
+}
+
+/* Typography */
+
+p {
+    line-height: 1.5;
+    letter-spacing: 0.2;
+}
+
+h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
+    font-weight: 700;
+    letter-spacing: 0.2;
+}
+
+/* Buttons */
+
+.btn {
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--radius-circle);
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+}
+
+.btn-md {
+    padding: 0.35rem 1rem;
+}
+
+.btn-lg {
+    padding: 0.75rem 4rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    transition: 0.5s;
+    background-color: var(--primary-dim);
+}
+
+/* Page Structure */
+
+.nav-spacer {
+    width: 100%;
+    height: 55px;
+}
+
+section .container {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.bg-gray-light {
+    background-color: var(--gray-light);
+}
+
+/* Iconography */
+
+.icon-container {
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: var(--radius-circle);
+}
+
+.active .icon-container {
+    background-color: var(--primary-faded);
+}
