@@ -6,6 +6,9 @@
     --gray-dark: #141313;
     --gray-light: #262424;
     --gray-x-light: #464444;
+    --white: #FFFFFF;
+    --white-faded: #CCCCCC;
+    --black: #000000;
 
     --radius-small: 0.5rem;
     --radius-medium: 1rem;
@@ -27,6 +30,15 @@ html, body {
 
 /* Typography */
 
+a {
+    color: var(--white);
+    transition: 0.5s ease;
+}
+
+a:hover {
+    color: var(--white-faded);
+}
+
 p {
     line-height: 1.5;
     letter-spacing: 0.2;
@@ -35,6 +47,10 @@ p {
 h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
     font-weight: 700;
     letter-spacing: 0.2;
+}
+
+.gray-x-light {
+    color: var(--gray-x-light);
 }
 
 /* Buttons */
@@ -50,7 +66,7 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
 }
 
 .btn-md {
-    padding: 0.35rem 1rem;
+    padding: 0.35rem 1.5rem;
 }
 
 .btn-lg {
@@ -67,6 +83,23 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
 }
 
 /* Page Structure */
+
+hr.solid {
+    background-color: var(--gray-x-light);
+}
+
+.navbar-nav {
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-item {
+    padding-left: 2rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--white);
+}
 
 .nav-spacer {
     width: 100%;
@@ -88,6 +121,7 @@ section .container {
     display: inline-block;
     padding: 0.5rem;
     border-radius: var(--radius-circle);
+    background-color: var(--gray-light);
 }
 
 .active .icon-container {
