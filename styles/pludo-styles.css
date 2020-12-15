@@ -5,6 +5,10 @@
     --primary-faded: rgba(255, 13, 86, .5);
     --gray-dark: #141313;
     --gray-light: #262424;
+    --gray-x-light: #464444;
+
+    --radius-small: 0.5rem;
+    --radius-medium: 1rem;
     --radius-circle: 5rem;
 }
 
@@ -88,4 +92,14 @@ section .container {
 
 .active .icon-container {
     background-color: var(--primary-faded);
+}
+
+/* Form */
+
+input {
+    color: white;
+    border: none;
+    border-radius: var(--radius-small);
+    background-color: var(--gray-x-light);
+    padding: 1rem;
 }
