@@ -140,6 +140,10 @@ input {
     padding: 1rem;
 }
 
+#invalid-email {
+    display: none;
+}
+
 /* List */
 
 .list-item {
