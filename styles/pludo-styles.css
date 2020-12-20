@@ -137,3 +137,20 @@ input {
     background-color: var(--gray-x-light);
     padding: 1rem;
 }
+
+/* List */
+
+.list-item {
+    cursor: pointer;
+}
+
+.list-item .description {
+    height: 20px;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.list-item.active .description {
+    height: auto;
+    opacity: 1;
+}
