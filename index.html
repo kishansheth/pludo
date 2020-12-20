@@ -1,18 +1,20 @@
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Pludo</title>
-  <meta name="description" content="Pludo. You heard it here first.">
-  <meta name="author" content="Pludo.xyz">
+    <title>Pludo</title>
+    <meta name="description" content="Pludo. You heard it here first.">
+    <meta name="author" content="Pludo.xyz">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles/pludo-styles.css">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/pludo-styles.css">
 </head>
 
 <script>
@@ -24,6 +26,21 @@
     }
 
     $(function() {
+
+        var controller = new ScrollMagic.Controller();
+        var revealElements = document.getElementsByClassName("reveal");
+
+        console.log(revealElements);
+
+        for (var i=0; i<revealElements.length; i++) {
+            new ScrollMagic.Scene({
+                triggerElement: revealElements[i],
+                reverse: false
+            })
+                .setClassToggle(revealElements[i], "visible")
+                .addTo(controller);
+        }
+
 
         // Email address POST request
         $("#waitlist-submit").click(function() {
@@ -46,9 +63,12 @@
             console.log('clicked!');
             $('.list-item').removeClass("active");
             $(this).addClass("active");
+            $('.features-image').removeClass("active");
+            $('#' + $(this).attr('name').toString()).addClass("active");
         });
 
     });
+
 </script>
 
 <body>
@@ -59,7 +79,7 @@
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="mailto:info@pludo.xyz">Contact</a>
                 </li>
                 <li class="nav-item">
                         <a class="nav-link" href="#"><button class="btn btn-primary btn-md">Download</button></a>
@@ -69,7 +89,7 @@
     </nav>
     <section>
         <div class="nav-spacer"></div>
-        <div class="container" style="margin-top: 2rem;">
+        <div class="container reveal" style="margin-top: 2rem;">
                 <div class="row">
                     <div class="col-md-8">
                         <h1>You heard it here first.</h1>
@@ -92,10 +112,10 @@
             </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container pt-1 reveal">
             <div class="row justify-content-center align-items-center flex-md-row flex-column-reverse">
                 <div class="col-md-5">
-                    <div class="row my-3 list-item active">
+                    <div class="row my-3 list-item active" name="discover">
                         <div class="col-2">
                             <div class="icon-container">
                                 <img src="img/discover-icon.svg">
@@ -106,7 +126,7 @@
                             <p class="description">Discover new spaces based on topics or people.</p>
                         </div>
                     </div>
-                    <div class="row my-3 list-item">
+                    <div class="row my-3 list-item" name="record">
                         <div class="col-2">
                             <div class="icon-container">
                                 <img src="img/record-icon.svg">
@@ -114,10 +134,10 @@
                         </div>
                         <div class="col-md-8">
                             <h3>Record</h3>
-                            <p class="description">Discover new spaces based on topics or people.</p>
+                            <p class="description">Record up to 90 seconds of audio to share with an audience.</p>
                         </div>
                     </div>
-                    <div class="row my-3 list-item">
+                    <div class="row my-3 list-item" name="collaborate">
                         <div class="col-2">
                             <div class="icon-container">
                                 <img src="img/collaborate-icon.svg">
@@ -125,10 +145,10 @@
                         </div>
                         <div class="col-md-8">
                             <h3>Collaborate</h3>
-                            <p class="description">Discover new spaces based on topics or people.</p>
+                            <p class="description">Collaborate and interact with other creators.</p>
                         </div>
                     </div>
-                    <div class="row my-3 list-item">
+                    <div class="row my-3 list-item" name="stream">
                         <div class="col-2">
                             <div class="icon-container">
                                 <img src="img/stream-icon.svg">
@@ -136,18 +156,21 @@
                         </div>
                         <div class="col-md-8">
                             <h3>Stream</h3>
-                            <p class="description">Discover new spaces based on topics or people.</p>
+                            <p class="description">Continous streaming that doesn’t interrupt your flow.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <img width="500" src="img/discover.png" alt="Discover">
+                <div class="col-md-4" style="height: 600px;">
+                    <img id="discover" class="features-image active" height="600px" src="img/feature-discover.png" alt="Discover Screenshot">
+                    <img id="record" class="features-image" height="600px" src="img/feature-record.png" alt="Record Screenshot">
+                    <img id="collaborate" class="features-image" height="600px" src="img/feature-collaborate.png" alt="Collaborate Screenshot">
+                    <img id="stream" class="features-image" height="600px" src="img/feature-stream.png" alt="Stream Screenshot">
                 </div>
             </div>
         </div>
     </section>
     <section class="bg-gray-light">
-        <div class="container">
+        <div class="container reveal">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
                     <h4>Pludo brings together content creators, friend groups, and real opinions — hear what matters most to you!</h4>
@@ -157,20 +180,20 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container reveal">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-4">
                     <h2>Share content outside of Pludo.</h2>
                     <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
                 </div>
                 <div class="col-md-5">
-                    <img width="500" src="img/share-content.png" alt="Share content">
+                    <img class="w-100" src="img/share-content.png" alt="Share content">
                 </div>
             </div>
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container reveal">
             <div class="row justify-content-center">
                 <div class="col-md-12 text-center">
                     <h2 class="pb-5">Lorem ipsum dolor sit.</h2>
@@ -193,10 +216,10 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container reveal">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-5">
-                    <img width="500" src="img/speech-bubble.gif" alt="Creation cloud">
+                    <img class="w-100" src="img/speech-bubble.gif" alt="Creation cloud">
                 </div>
                 <div class="col-md-4">
                     <h2>Create and manage your own spaces.</h2>
@@ -206,7 +229,7 @@
         </div>
     </section>
     <section class="bg-gray-light">
-        <div class="container">
+        <div class="container reveal">
             <div class="row justify-content-center">
                 <div class="col-md-9 text-center">
                     <h3>Download the app for free.</h3>
@@ -231,11 +254,11 @@
                 <div class="col-6 justify-content-right">
                     <ul class="navbar-nav text-right flex-row-reverse">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="mailto:info@pludo.xyz">Contact</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -245,7 +268,7 @@
                 </div>
                 <div class="col-6">
                     <ul class="navbar-nav text-right flex-row-reverse">
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="#">
                                 <div class="icon-container">
                                     <img src="img/facebook.svg" alt="Facebook Logo">
@@ -265,7 +288,7 @@
                                     <img src="img/instagram.svg" alt="Instagram Logo">
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

@@ -77,8 +77,10 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
     background-color: var(--primary);
 }
 
-.btn-primary:hover {
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle, .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    border: none;
     transition: 0.5s;
+    box-shadow: none;
     background-color: var(--primary-dim);
 }
 
@@ -147,10 +149,48 @@ input {
 .list-item .description {
     height: 20px;
     opacity: 0;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
 }
 
 .list-item.active .description {
     height: auto;
     opacity: 1;
+}
+
+/* Animation */
+
+.reveal {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    -moz-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    -o-transform: translateY(-40px);
+    transform: translateY(-40px);
+    -webkit-transition: all 1.0s ease;
+    -moz-transition: all 1.0s ease;
+    -ms-transition: all 1.0s ease;
+    -o-transition: all 1.0s ease;
+    transition: all 1.0s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+.features-image {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.features-image.active {
+    transform: none;
+    opacity: 1;
+    transition: 1.0s ease;
 }
