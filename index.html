@@ -75,14 +75,14 @@
     <nav class="navbar navbar-dark navbar-fixed fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img width="100px" src="img/logo-white.svg" alt="Pludo Logo">
+                <img class="navbar-brand-image" src="img/logo-white.svg" alt="Pludo Logo">
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="mailto:info@pludo.xyz">Contact</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" href="#"><button class="btn btn-primary btn-md">Download</button></a>
+                        <a class="nav-link" href="#waitlist-section"><button class="btn btn-primary btn-md">Download</button></a>
                 </li>
             </ul>
         </div>
@@ -93,8 +93,8 @@
                 <div class="row">
                     <div class="col-md-8 text-center text-md-left">
                         <h1 class="headline">You heard it here first.</h1>
-                        <button class="btn btn-primary btn-lg my-4">Download</button>
-                        <div class="row justify-content-center justify-content-md-start">
+                        <a class="d-none d-md-block" href="#waitlist-section"><button class="btn btn-primary btn-lg my-4">Download</button></a>
+                        <div class="d-none d-md-block row justify-content-center justify-content-md-start">
                             <div class="col-8 col-md-5">
                                 <p class="pt-2">Create, share, and discover short form audio content.</p>
                             </div>
@@ -109,13 +109,23 @@
                         <img id="beanbag-gif" class="w-100" src="img/beanbag.gif" alt="Pludo guy sitting on beanbag">
                     </div>
                 </div>
+                <div class="d-md-none row">
+                    <div class="col-md-8 text-center">
+                        <a href="#waitlist-section"><button class="btn btn-primary btn-lg my-5">Download</button></a>
+                        <div class="row justify-content-center justify-content-md-start">
+                            <div class="col-8">
+                                <p class="pt-2">Create, share, and discover short form audio content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
     </section>
     <section>
         <div class="container pt-1 reveal">
             <div class="row justify-content-center flex-md-row flex-column-reverse">
-                <div class="col-10 col-md-5">
-                    <div class="row my-lg-3 list-item active" name="discover">
+                <div class="col-md-5">
+                    <div class="row justify-content-center my-lg-3 list-item active" name="discover">
                         <div class="col-auto">
                             <div class="icon-container">
                                 <img src="img/discover-icon.svg">
@@ -126,7 +136,7 @@
                             <p class="description">Discover new spaces based on topics or people.</p>
                         </div>
                     </div>
-                    <div class="row my-lg-3 list-item" name="record">
+                    <div class="row justify-content-center my-lg-3 list-item" name="record">
                         <div class="col-auto">
                             <div class="icon-container">
                                 <img src="img/record-icon.svg">
@@ -137,7 +147,7 @@
                             <p class="description">Record up to 90 seconds of audio to share with an audience.</p>
                         </div>
                     </div>
-                    <div class="row my-lg-3 list-item" name="collaborate">
+                    <div class="row justify-content-center my-lg-3 list-item" name="collaborate">
                         <div class="col-auto">
                             <div class="icon-container">
                                 <img src="img/collaborate-icon.svg">
@@ -148,7 +158,7 @@
                             <p class="description">Collaborate and interact with other creators.</p>
                         </div>
                     </div>
-                    <div class="row my-lg-3 list-item" name="stream">
+                    <div class="row justify-content-center my-lg-3 list-item" name="stream">
                         <div class="col-auto">
                             <div class="icon-container">
                                 <img src="img/stream-icon.svg">
@@ -160,11 +170,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 features-image-container">
-                    <img id="discover" class="img-fluid features-image active" src="img/feature-discover.png" alt="Discover Screenshot">
-                    <img id="record" class="img-fluid features-image" src="img/feature-record.png" alt="Record Screenshot">
-                    <img id="collaborate" class="img-fluid features-image" src="img/feature-collaborate.png" alt="Collaborate Screenshot">
-                    <img id="stream" class="img-fluid features-image" src="img/feature-stream.png" alt="Stream Screenshot">
+                <div class="col-md-5 mb-3">
+                    <div class="features-image-container">
+                        <img id="discover" class="img-fluid features-image active" src="img/feature-discover.png" alt="Discover Screenshot">
+                        <img id="record" class="img-fluid features-image" src="img/feature-record.png" alt="Record Screenshot">
+                        <img id="collaborate" class="img-fluid features-image" src="img/feature-collaborate.png" alt="Collaborate Screenshot">
+                        <img id="stream" class="img-fluid features-image" src="img/feature-stream.png" alt="Stream Screenshot">
+                    </div>
                 </div>
             </div>
         </div>
@@ -212,19 +224,19 @@
         </div>
     </section>
     <section>
-        <div class="container py-4 reveal">
+        <div class="container pt-4 reveal">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-5">
                     <img class="w-100" src="img/speech-bubble.gif" alt="Creation cloud">
                 </div>
-                <div class="col-md-4">
+                <div class="col-10 col-md-4">
                     <h2>Create and manage your own spaces.</h2>
                     <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="bg-gray-light">
+    <section id="waitlist-section" class="bg-gray-light">
         <div class="container reveal">
             <div class="row justify-content-center">
                 <div class="col-md-9 text-center">
