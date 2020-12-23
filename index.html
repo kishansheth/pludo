@@ -28,10 +28,28 @@
 
     $(function() {
 
+        // Image Loading
+        var imgs = document.images,
+            len = imgs.length,
+            counter = 0;
+
+        [].forEach.call( imgs, function( img ) {
+            if(img.complete)
+            incrementCounter();
+            else
+            img.addEventListener( 'load', incrementCounter, false );
+        } );
+
+        function incrementCounter() {
+            counter++;
+            if ( counter === len ) {
+                console.log( 'All images loaded!' );
+            }
+        }
+
+        // Scroll Animations
         var controller = new ScrollMagic.Controller();
         var revealElements = document.getElementsByClassName("reveal");
-
-        console.log(revealElements);
 
         for (var i=0; i<revealElements.length; i++) {
             new ScrollMagic.Scene({
@@ -117,7 +135,7 @@
                 </div>
                 <div class="d-md-none row">
                     <div class="col-md-8 text-center">
-                        <a href="#waitlist-section"><button class="btn btn-primary btn-lg my-5">Download</button></a>
+                        <a href="#waitlist-section"><button class="btn btn-primary btn-lg my-5">Coming Soon</button></a>
                         <div class="row justify-content-center justify-content-md-start">
                             <div class="col-8">
                                 <p class="pt-2">Create, share, and discover short form audio content.</p>
@@ -257,7 +275,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div id="waitlist-submit" class="btn btn-primary btn-lg text-center">Submit</button>
+                                <div id="waitlist-submit" class="btn btn-primary btn-lg text-center">Sign Up for News</button>
                             </div>
                         </div>
                     </form>
@@ -283,12 +301,12 @@
                 </div>
             </div>
             <div class="row pt-5 pb-3">
-                <div class="col-6">
+                <!-- <div class="col-6">
                     <a href="http://appstore.com/"><img src="img/app-store-download.svg" alt="Download on the Apple App Store"></a>
                 </div>
                 <div class="col-6">
                     <ul class="navbar-nav text-right flex-row-reverse">
-                        <!-- <li class="nav-item">
+                        <li class="nav-item">
                             <a href="#">
                                 <div class="icon-container">
                                     <img src="img/facebook.svg" alt="Facebook Logo">
@@ -308,9 +326,9 @@
                                     <img src="img/instagram.svg" alt="Instagram Logo">
                                 </div>
                             </a>
-                        </li> -->
+                        </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
             <hr class="solid">
             <div class="row">
