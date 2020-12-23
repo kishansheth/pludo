@@ -148,8 +148,12 @@ input {
     padding: 1rem;
 }
 
-#invalid-email {
+#invalid-email, #valid-email {
     display: none;
+}
+
+#valid-email span {
+    color: #40F99B;
 }
 
 /* List */

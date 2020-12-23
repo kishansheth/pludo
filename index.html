@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -43,7 +44,8 @@
 
 
         // Email address POST request
-        $("#waitlist-submit").click(function() {
+        $("#waitlist-submit").click(function(e) {
+            e.preventDefault();
             if (validateEmail($('#waitlist-email').val())) {
                 var formData = new FormData();
                 formData.append("email", $('#waitlist-email').val());
@@ -52,7 +54,11 @@
                         method: "POST", 
                         body: formData, 
                         mode: 'no-cors'
-                    }).then(response => $('#invalid-email').hide());
+                    }).then(function(response) {
+                        $('#invalid-email').hide();
+                        $('#waitlist-submit').hide();
+                        $('#valid-email').show();
+                    });
             } else {
                 $('#invalid-email').show();
             }
@@ -82,7 +88,7 @@
                     <a class="nav-link" href="mailto:info@pludo.xyz">Contact</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" href="#waitlist-section"><button class="btn btn-primary btn-md">Download</button></a>
+                        <a class="nav-link" href="#waitlist-section"><button class="btn btn-primary btn-md">Coming Soon</button></a>
                 </li>
             </ul>
         </div>
@@ -93,7 +99,7 @@
                 <div class="row">
                     <div class="col-md-8 text-center text-md-left">
                         <h1 class="headline">You heard it here first.</h1>
-                        <a class="d-none d-md-block" href="#waitlist-section"><button class="btn btn-primary btn-lg my-4">Download</button></a>
+                        <a class="d-none d-md-block" href="#waitlist-section"><button class="btn btn-primary btn-lg my-4">Coming Soon</button></a>
                         <div class="d-none d-md-block row justify-content-center justify-content-md-start">
                             <div class="col-8 col-md-5">
                                 <p class="pt-2">Create, share, and discover short form audio content.</p>
@@ -231,7 +237,7 @@
                 </div>
                 <div class="col-10 col-md-4">
                     <h2>Create and manage your own spaces.</h2>
-                    <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
+                    <p class="mt-4">Pludo lets you control the privacy of your spaces as well as moderate the content creation.</p>
                 </div>
             </div>
         </div>
@@ -246,6 +252,7 @@
                             <div class="col-9 col-lg-6">
                                 <input id="waitlist-email" class="my-5 w-100" type="input" placeholder="Email Address">
                                 <p id="invalid-email">Please enter a valid email address.</p>
+                                <p id="valid-email"><span>Success! </span>We'll be in touch shortly.</p>
                             </div>
                         </div>
                         <div class="row">
