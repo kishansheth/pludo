@@ -43,7 +43,7 @@
         function incrementCounter() {
             counter++;
             if ( counter === len ) {
-                console.log( 'All images loaded!' );
+                $(".loading-container").fadeOut();
             }
         }
 
@@ -96,6 +96,18 @@
 </script>
 
 <body>
+    <div class="loading-container w-100 h-100 position-fixed">
+        <div class="container-fluid h-100 align-items-center">
+            <div class="row align-items-center h-100">
+                <div class="col-12 text-center justify-content-center">
+                    <div>🪐 Loading...</div>
+                    <div class="progress mt-4">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-dark navbar-fixed fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -269,7 +281,7 @@
                         <div class="row justify-content-center">
                             <div class="col-9 col-lg-6">
                                 <input id="waitlist-email" class="my-5 w-100" type="input" placeholder="Email Address">
-                                <p id="invalid-email">Please enter a valid email address.</p>
+                                <p id="invalid-email"><span>Oops! </span>Please enter a valid email address.</p>
                                 <p id="valid-email"><span>Success! </span>We'll be in touch shortly.</p>
                             </div>
                         </div>
