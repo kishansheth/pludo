@@ -126,6 +126,23 @@ section .container {
     background-color: var(--gray-light);
 }
 
+.side-scroll-container {
+    overflow: scroll;
+}
+
+.side-scroll {
+    min-width: 700px;
+}
+
+.side-scroll-bumper {
+    z-index: 2000;
+    width: 70px;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to right, rgba(20, 19, 19, 0), rgba(20, 19, 19, 1));
+}
+
 /* Iconography */
 
 .icon-container {
