@@ -85,6 +85,14 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
     background-color: var(--primary-dim);
 }
 
+#header-coming-soon {
+    font-size: 0.8rem;
+}
+
+#header-contact {
+    font-size: 0.8rem;
+}
+
 /* Page Structure */
 
 hr.solid {
