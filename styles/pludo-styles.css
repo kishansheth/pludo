@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
 }
 
 .btn-md {
-    padding: 0.35rem 1.5rem;
+    padding: 0.45rem 1.5rem;
 }
 
 .btn-lg {
@@ -252,6 +252,12 @@ input:hover {
 
 #planet-gif {
     z-index: 1;
+    width: 100%;
+}
+
+#planet-gif-filler {
+    z-index: 1;
+    height: 375px;
     width: 100%;
 }
 
