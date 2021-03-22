@@ -1,8 +1,8 @@
 :root {
     /* Colors */
-    --primary: #FF0D56;
-    --primary-dim: #cc0a44;
-    --primary-faded: rgba(255, 13, 86, .5);
+    --primary: #58C0FA;
+    --primary-dim: rgb(83, 167, 212);
+    --primary-faded: rgba(88, 192, 250, .5);
     --gray-dark: #141313;
     --gray-light: #262424;
     --gray-x-light: #464444;
@@ -100,7 +100,7 @@ hr.solid {
 }
 
 .navbar-brand-image {
-    width: 100px;
+    width: 50px;
 }
 
 .navbar-nav {
@@ -311,7 +311,7 @@ input:hover {
     }
 
     .navbar-brand-image {
-        width: 80px;
+        width: 60px;
     }
 
     .headline {
