@@ -9,6 +9,7 @@
     --white: #FFFFFF;
     --white-faded: #CCCCCC;
     --black: #000000;
+    --background-gradient: linear-gradient(to bottom right, #AA83FD 25%, #FFA370, #F9C43D, #6AD867);
 
     --radius-small: 0.5rem;
     --radius-medium: 1rem;
@@ -20,7 +21,7 @@ html, body {
     color: white;
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
-    background-color: var(--gray-dark);
+    background-image: var(--background-gradient);
 }
 
 .test {
@@ -253,6 +254,15 @@ input:hover {
 #planet-gif {
     z-index: 1;
     width: 100%;
+}
+
+#pludo-logo {
+    z-index: 1;
+    width: 10%;
+}
+
+#app-store-img {
+    overflow: visible;
 }
 
 #planet-gif-filler {
