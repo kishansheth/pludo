@@ -9,8 +9,7 @@
     --white: #FFFFFF;
     --white-faded: #CCCCCC;
     --black: #000000;
-    --background-gradient: linear-gradient(to bottom right, #AA83FD 25%, #FFA370, #F9C43D, #6AD867);
-
+    --background-gradient:  linear-gradient(to bottom right, #AA83FD 20%, #FFA370, #F9C43D, #6AD867,  #526EFF, #E358FA);
     --radius-small: 0.5rem;
     --radius-medium: 1rem;
     --radius-circle: 5rem;
@@ -22,6 +21,36 @@ html, body {
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
     background-image: var(--background-gradient);
+    background-size: 400% 400%;
+    animation: colorchange 20s ease infinite;
+    -webkit-animation: colorchange 20s ease 0s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+    0%{background-position:0% 0%}
+    25%{background-position:25% 25%}
+    50%{background-position:50% 50%}
+    75%{background-position:75% 75%}
+    100%{background-position:100% 100%}
+}
+@-moz-keyframes colorchange {
+    0%{background-position:0% 0%}
+    25%{background-position:25% 25%}
+    50%{background-position:50% 50%}
+    75%{background-position:75% 75%}
+    100%{background-position:100% 100%}
+}
+@keyframes colorchange {
+    0%{background-position:0% 0%}
+    25%{background-position:25% 25%}
+    50%{background-position:50% 50%}
+    75%{background-position:75% 75%}
+    100%{background-position:100% 100%}
+}
+
+.pt-2 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
 }
 
 .test {
@@ -199,7 +228,7 @@ input:hover {
 }
 
 .list-item .description {
-    height: 20px;
+    height: 100px;
     opacity: 0;
     transition: 0.3s ease;
 }
@@ -258,7 +287,7 @@ input:hover {
 
 #pludo-logo {
     z-index: 1;
-    width: 10%;
+    width: 15%;
 }
 
 #app-store-img {
