@@ -60,29 +60,6 @@
                 .addTo(controller);
         }
 
-
-        // Email address POST request
-        $("#waitlist-submit").click(function(e) {
-            e.preventDefault();
-            if (validateEmail($('#waitlist-email').val())) {
-                var formData = new FormData();
-                formData.append("email", $('#waitlist-email').val());
-                fetch('https://pludo.app/api/waitlist', 
-                    {  
-                        method: "POST", 
-                        body: formData, 
-                        mode: 'no-cors'
-                    }).then(function(response) {
-                        $('#invalid-email').hide();
-                        $('#waitlist-submit').hide();
-                        $('#waitlist-email').hide();
-                        $('#valid-email').show();
-                    });
-            } else {
-                $('#invalid-email').show();
-            }
-        });
-
         // Toggle list items
         $('.list-item').click(function() {
             console.log('clicked!');
@@ -95,16 +72,6 @@
     });
 
 </script>
-<!-- <style>
-.container--waitlistapi {background-color: rgba(0,0,0,0); margin: 0 auto;}
-.container--waitlistapi > h1 {color: black; font-size: 1.2rem; font-weight: 400; font-family: 'Proxima Nova', sans-serif;}
-.button--waitlistapi {color: black; font-size: 1.2rem; font-weight: 400; font-family: 'Proxima Nova', sans-serif;}
-.input--waitlistapi {color: black;font-size: 1.2rem; font-weight: 400; font-family: 'Proxima Nova', sans-serif;}
-.statusToggleLabel {color: black; font-size: 1.2rem; font-weight: 400; font-family: 'Proxima Nova', sans-serif;}
-.statusToggleLabel > a {color: black; font-size: 1.2rem; font-weight: 400; font-family: 'Proxima Nova', sans-serif;}
-.switchToCheckStatusLink {color: black; font-size: 1.2rem; font-weight: 400; font-family: 'Proxima Nova', sans-serif;}
-a {color: black; font-size: 1.2rem; font-weight: 400; font-family: 'Proxima Nova', sans-serif;}
-</style> -->
 
 <body>
     <nav class="navbar navbar-dark navbar-fixed fixed-top">
@@ -116,9 +83,6 @@ a {color: black; font-size: 1.2rem; font-weight: 400; font-family: 'Proxima Nova
                 <li class="nav-item">
                     <a class="nav-link" href="mailto:info@pludo.xyz" id="header-contact">Contact</a>
                 </li>
-                <!-- <li class="nav-item">
-                        <a class="nav-link" href="https://apps.apple.com/us/app/pludo-social-voice-messages/id1542827622"><button class="btn btn-primary btn-md" id="header-coming-soon">Download Now</button></a>
-                </li> -->
             </ul>
         </div>
     </nav>
@@ -129,7 +93,6 @@ a {color: black; font-size: 1.2rem; font-weight: 400; font-family: 'Proxima Nova
         <div class="mt-md-12 container reveal">
             <div class="row">
                 <div class="col-12 text-center text-md-center">
-                    <!-- <div id="planet-gif-filler"></div> -->
                     <img id="pludo-logo" src="img/logo-white.svg" alt="Pludo Logo">
                 </div>
             </div>
@@ -137,72 +100,14 @@ a {color: black; font-size: 1.2rem; font-weight: 400; font-family: 'Proxima Nova
             <div class="row">
                 <div class="col-md-12 text-center text-md-center">
                     <h3>The sound of your thoughts</h3>
-                    <!-- <div class="d-md-block row justify-content-center justify-content-md-start">
-                        <div class="col-12 col-md-12">
-                            <p class="pt-1">Create and discover conversations through audio message threads</p>
-                        </div>
-                    </div>
-                    <br> -->
                     <div class="d-md-block row justify-content-center justify-content-md-start">
                         <div class="col-12 col-md-12">
-                            <p class="pt-1">Get early access to the beta by joining the waitlist below</p>
+                            <p class="pt-1">Currently an invite only platform but available to the public soon!</p>
                         </div>
                     </div>
-                    <div class="waitlist-success" id="valid-email">
-                        Successfully sent 🎉 keep an eye out for an email from us
-                    </div>
-                    <div class="d-md-block row justify-content-center justify-content-md-start">
-                        <div class="col-12 col-md-12">
-                            <div id="email-waitlist">
-                                <form>
-                                    <input class="col-10 col-md-6" type="text" id="waitlist-email" placeholder="Enter your email"></input>
-                                    <br>
-                                    <input  class="col-6 col-md-2" type="submit" id="waitlist-submit"></input>
-                                </form>
-                                <div class="waitlist-success" id="invalid-email">
-                                    Invalid email
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
                     <a class="d-md-block" id="app-store" href="https://apps.apple.com/us/app/pludo-social-voice-messages/id1542827622"><img id="app-store-img" src="img/app-store-download-white.svg" alt="App Store Download"></a>
                 </div>
             </div>
-            <!-- <script 
-                src="./widget.js" 
-                id="Waitlist-API-Script" 
-                data-config="{
-                    'name': 'w1', 
-                    'api_key': '1JER0S', 
-                'waitlist_link': 'https://pludo.xyz',
-                'config': {'targetElementId': 'root2'},
-                'joinWaitlistHeading': 'Get special access', 
-                'checkStatusHeading': 'Check your status',
-                'joinWaitlistButton': 'Join waitlist',
-                'checkStatusButton': 'Check status',
-                'switchToCheckStatusLabel': 'Signed up before?',
-                'switchToCheckStatusLink': 'Check your status',
-                'switchToJoinWaitlistLabel': 'Not signed up?',
-                'switchToJoinWaitlistLink': 'Join waitlist'
-                }">
-            </script> -->
-                <!-- <div class="row justify-content-center beanbag-container">
-                    <div class="col-md-8">
-                        <img id="beanbag-gif" class="w-100" src="img/beanbag.gif" alt="Pludo guy sitting on beanbag">
-                    </div>
-                </div> -->
-                <!-- <div class="d-md-none row">
-                    <div class="col-md-8 text-center">
-                        <a href="https://apps.apple.com/us/app/pludo-social-voice-messages/id1542827622"><button class="btn btn-primary btn-lg my-5">Download Now</button></a>
-                        <div class="row justify-content-center justify-content-md-start">
-                            <div class="col-8">
-                                <p class="pt-2">Create, share, and discover short form audio content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
         </div>
     </section>
 </body>
