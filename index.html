@@ -47,6 +47,28 @@
             }
         }
 
+        // Email address POST request
+        $("#waitlist-submit").click(function(e) {
+            e.preventDefault();
+            if (validateEmail($('#waitlist-email').val())) {
+                var formData = new FormData();
+                formData.append("email", $('#waitlist-email').val());
+                fetch('https://pludo.app/api/waitlist', 
+                    {  
+                        method: "POST", 
+                        body: formData, 
+                        mode: 'no-cors'
+                    }).then(function(response) {
+                        $('#invalid-email').hide();
+                        $('#waitlist-submit').hide();
+                        $('#waitlist-email').hide();
+                        $('#valid-email').show();
+                    });
+            } else {
+                $('#invalid-email').show();
+            }
+        });
+
         // Scroll Animations
         var controller = new ScrollMagic.Controller();
         var revealElements = document.getElementsByClassName("reveal");
@@ -102,10 +124,27 @@
             <br>
             <div class="row">
                 <div class="col-md-12 text-center text-md-center">
-                    <h3>The sound of your thoughts</h3>
+                    <h3>Personal growth through audio</h3>
                     <div class="d-md-block row justify-content-center justify-content-md-start">
                         <div class="col-12 col-md-12">
-                            <p class="pt-1">Currently an invite only platform but available to the public soon!</p>
+                            <p class="pt-1">Listen to and engage with exclusive audio content from experts, thinkers and creators. Anytime, anywhere.</p>
+                        </div>
+                    </div>
+                    <div class="waitlist-success" id="valid-email">
+                        Successfully sent 🎉 keep an eye out for an email from us
+                    </div>
+                    <div class="d-md-block row justify-content-center justify-content-md-start">
+                        <div class="col-12 col-md-12">
+                            <div id="email-waitlist">
+                                <form>
+                                    <input class="col-10 col-md-6" type="text" id="waitlist-email" placeholder="For creators: Enter your email to stay up to date"></input>
+                                    <br>
+                                    <input  class="col-6 col-md-2" type="submit" id="waitlist-submit"></input>
+                                </form>
+                                <div class="waitlist-success" id="invalid-email">
+                                    Invalid email
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- <a class="d-md-block" id="app-store" href="https://apps.apple.com/us/app/pludo-social-voice-messages/id1542827622"><img id="app-store-img" src="img/app-store-download-white.svg" alt="App Store Download"></a> -->
