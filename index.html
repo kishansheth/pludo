@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.0/flexboxgrid.min.css" integrity="sha512-Q3U8hz9H8BrYqsJLtfoyk0it/iXR8ddBJ5HbBlDcvgJXZ5KkePOQoLfq1HgERZXe9EfE0/sHAMsXPOkt1jY3YQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Pludo</title>
+  </head>
+  <body>
+
+  <!-- header -->
+  <div class="row header-row">
+    <div class="col-xs-2">
+      <h2>Pludo</h2>
+    </div>
+    <div class="col-xs-10">
+      <p id='email'>Are you a creator? <a href="mailto:info@pludo.xyz">Email us.</a></p>
+    </div>
+  </div>
+  <!-- end header -->
+
+  <!-- main -->
+  <div class="row main-row">
+    <!-- <audio id="audio1" src="audio/gary.mp3" preload="auto"  ></audio>
+    <audio id="audio2" src="audio/alyssa.m4a" preload="auto"  ></audio>
+    <audio id="audio3" src="audio/ian.m4a" preload="auto"  ></audio>
+    <audio id="audio4" src="audio/mia.m4a" preload="auto"  ></audio>
+    <audio id="audio5" src="audio/goggins.mp3" preload="auto"  ></audio> -->
+    <div class="col-xs-12">
+      <h1>
+        Have the conversations you always wanted
+      </h1>
+      <p>
+        Paid private messaging for creators, experts, and their audience.
+      </p>
+      <br>
+      <div id='content'>
+        <img src="home_screen.png" alt="Home Screen">
+        <!-- <div id='creator_images'>
+            <img id="player1" class = 'creator_image img-back' src="img/gary.jpeg" alt="man">
+            <img id="player2" class = 'creator_image img-middle' src="img/alyssa.jpeg" alt="man">
+            <img id="player3" class = 'creator_image img-front' src="img/ian.jpeg" alt="man">
+            <img id="player4" class = 'creator_image img-middle' src="img/mia.jpeg" alt="man">
+            <img id="player5" class = 'creator_image img-back' src="img/goggins.jpeg" alt="man">
+        </div>
+        <div>
+            <img id='sound_img' src="img/noun_Sound_3610840.png" alt="sound">
+        </div> -->
+    </div>
+    <br>
+
+      <!-- modify this form HTML and place wherever you want your form -->
+
+      <form
+        action="https://formspree.io/f/mzbyvqwn"
+        redirect
+        method="POST"
+        id="contactform"
+      >
+      <div class="border-container">
+          <input type="email" name="_replyto" placeholder="Enter your email for early access">
+      </div>
+      <br>
+
+        <!-- your other form fields go here -->
+
+        <button id="submitButton" type="submit" id="sendMessage">Join Waitlist</button>
+      </form>
+    </div>
+    </div>
+
+  <a name="submitted" id="submitted"></a>
+  <!-- end main -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
+
+  </body>
+</html>
