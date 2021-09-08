@@ -328,11 +328,11 @@
   @media (max-width: 651px) {
     .main-row form button[type="submit"] {
       margin-top: 23px; } } */
-  /* @media (max-width: 550px) {
+   @media (max-width: 550px) {
     h1 {
-      font-size: 25px; }
+      font-size: 35px; }
   
-    h2, p, li {
+    /*h2, p, li {
       font-size: 18px; }
   
     .main-row form input[type="email"] {
@@ -349,7 +349,8 @@
         font-size: 14px; }
   
     .main-row form button[type="submit"] {
-      font-size: 14px; } } */
+      font-size: 14px; }*/
+    } 
   #progressbar1 {
     width: 0;
     height: 8px;
