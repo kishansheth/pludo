@@ -1207,6 +1207,7 @@ figcaption {
   flex: 0 auto;
   font-family: Inter, Arial, sans-serif;
   color: #000;
+  font-weight: 600;
 }
 
 .download-buttons {
