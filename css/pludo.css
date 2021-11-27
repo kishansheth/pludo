@@ -1609,6 +1609,9 @@ figcaption {
 .hero-description {
   font-family: Inter, Arial, sans-serif;
   color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  color: #808080;
 }
 
 .italic-text {
