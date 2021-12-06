@@ -302,7 +302,7 @@ figcaption {
   width: 50vw;
   padding-right: 0em;
   padding-left: 1rem;
-  background-image: linear-gradient(110deg, #1d74f6, #8a1df6);
+  background-image: linear-gradient(110deg, #1d74f6, #1d74f6);
   font-family: Inter, Arial, sans-serif;
   text-align: left;
   -webkit-background-clip: text;
@@ -380,7 +380,7 @@ figcaption {
   width: 100%;
   height: 2px;
   background-color: #13cc78;
-  background-image: linear-gradient(110deg, #1d74f6, #8a1df6);
+  background-image: linear-gradient(110deg, #1d74f6, #1d74f6);
 }
 
 .grid-6-col {
@@ -664,8 +664,10 @@ figcaption {
   color: #fa5853;
 }
 
+/* linear-gradient(110deg, #1d74f6, #1d74f6); */
+
 .text-gradient-1 {
-  background-image: linear-gradient(110deg, #1d74f6, #8a1df6);
+  background-image: linear-gradient(110deg, #1d74f6, #1d74f6);
   font-family: Inter, Arial, sans-serif;
   color: #000;
   -webkit-background-clip: text;
@@ -674,7 +676,7 @@ figcaption {
 }
 
 .text-gradient-2 {
-  background-image: linear-gradient(110deg, #1d74f6, #8a1df6);
+  background-image: linear-gradient(110deg, #1d74f6, #1d74f6);
   font-family: Inter, Arial, sans-serif;
   color: #000;
   -webkit-background-clip: text;
@@ -718,7 +720,7 @@ figcaption {
 .gradient-line.line-margin {
   margin-top: 20px;
   margin-bottom: 20px;
-  background-image: linear-gradient(110deg, #1d74f6, #8a1df6);
+  background-image: linear-gradient(110deg, #1d74f6, #1d74f6);
 }
 
 .nav-cta-button {
@@ -748,7 +750,7 @@ figcaption {
   padding: 13px 20px;
   border-radius: 10px;
   background-color: #1d74f6;
-  background-image: linear-gradient(110deg, #1d74f6, #8a1df6);
+  background-image: linear-gradient(110deg, #1d74f6, #1d74f6);
   -webkit-transition: letter-spacing 300ms ease, color 300ms ease;
   transition: letter-spacing 300ms ease, color 300ms ease;
   font-family: Inter, Arial, sans-serif;
@@ -774,7 +776,7 @@ figcaption {
   width: 100px;
   min-width: 100px;
   border-radius: 15px;
-  background-image: url('../images/Arrow-White.svg'), linear-gradient(110deg, #1d74f6, #8a1df6);
+  background-image: url('../images/Arrow-White.svg'), linear-gradient(110deg, #1d74f6, #1d74f6);
   background-position: 50% 50%, 0px 0px;
   background-size: auto, auto;
   background-repeat: no-repeat, repeat;
@@ -1715,7 +1717,7 @@ figcaption {
 }
 
 .heading-12 {
-  background-image: linear-gradient(110deg, #1d74f6, #8a1df6 29%);
+  background-image: linear-gradient(110deg, #1d74f6, #1d74f6 29%);
   font-family: Inter, Arial, sans-serif;
   -webkit-background-clip: text;
   background-clip: text;
